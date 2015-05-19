@@ -6,7 +6,7 @@ class email_template(osv.osv):
     
     _inherit = "email.template"
 
-    def get_po_attachments(self, cr, uid, template_id, res_id, context=None):
+    def get_so_attachments(self, cr, uid, template_id, res_id, context=None):
         attachment_model = self.pool.get('ir.attachment')
         attachment_ids = attachment_model.search(cr, uid, [('res_model','=','sale.order'),('res_id','=',res_id)], context=context)
         return attachment_ids
